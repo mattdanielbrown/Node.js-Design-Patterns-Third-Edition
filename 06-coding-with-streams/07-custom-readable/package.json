@@ -5,13 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chance": "^1.1.4"
+    "chance": "^1.1.4",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "jest": "^24.9.0"
@@ -19,5 +22,6 @@
   "engines": {
     "node": ">=14"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "snyk": true
 }
