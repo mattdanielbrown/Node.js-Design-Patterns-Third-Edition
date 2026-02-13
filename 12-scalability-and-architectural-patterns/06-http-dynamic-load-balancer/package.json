@@ -10,7 +10,9 @@
     "start:apps": "forever start -f --killSignal=SIGINT app.js api-service && forever start -f --killSignal=SIGINT app.js api-service && forever start -f --killSignal=SIGINT app.js webapp-service",
     "start:loadBalancer": "forever start -f --killSignal=SIGINT loadBalancer.js",
     "stop": "forever stopall",
-    "benchmark": "autocannon -c 200 -d 10 http://localhost:8080"
+    "benchmark": "autocannon -c 200 -d 10 http://localhost:8080",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "keywords": [],
   "author": "",
@@ -20,7 +22,8 @@
     "forever": "^3.0.0",
     "http-proxy": "^1.18.1",
     "nanoid": "^3.1.10",
-    "portfinder": "^1.0.26"
+    "portfinder": "^1.0.26",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "autocannon": "^5.0.1"
@@ -28,5 +31,6 @@
   "engines": {
     "node": ">=14"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "snyk": true
 }
